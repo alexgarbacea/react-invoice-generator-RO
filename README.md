@@ -2,8 +2,8 @@
 
 ## Test the app [here](https://alexgarbacea.github.io/react-invoice-generator-RO/)
 
-Generate invoices with the help of this app.
-The invoices have romanian invoice template.
+Generate invoices with the help of this app.\
+The invoices have romanian invoice template.\
 The language in wich the invoices are generated is `romanian`
 
 # Getting Started with Create React App
