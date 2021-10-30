@@ -1,3 +1,7 @@
+# Invoice generator with romanian invoices template.
+
+## Test the app [here](https://alexgarbacea.github.io/react-invoice-generator-RO/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
