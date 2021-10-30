@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Invoice from "./Components/Invoice";
+
+import MainMenu from "./Components/MainMenu";
+import NewInvoice from "./Components/NewInvoice";
 
 function App() {
+  const [currentMenu, setCurrentMenu] = useState('main')
+  const [invoiceData, setInvoiceData] = useState([]);
+
+  const generateInvoice = (data) => {
+    setInvoiceData(data);
+    setCurrentMenu('invoice');
+  }
+
+  const updateCurrentMenu = newVal => {
+    if (newVal !== 'main' && newVal !== 'invoice' && newVal !== 'new-invoice') 
+      return alert(`"${newVal}" not available in the demo version.\nContact developer for more info.`)
+    setCurrentMenu(newVal)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {currentMenu === 'main' && <MainMenu updater={updateCurrentMenu} />}
+      {currentMenu === 'new-invoice' && <NewInvoice generateInvoice={generateInvoice} updater={updateCurrentMenu} />}
+      {currentMenu === 'invoice' && <Invoice data={invoiceData} updater = {updateCurrentMenu} />}
     </div>
   );
 }
