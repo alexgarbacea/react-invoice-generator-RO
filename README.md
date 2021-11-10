@@ -10,4 +10,6 @@ Generate invoices with the help of this app.\
 The invoices have romanian invoice template.\
 The language in wich the invoices are generated is `romanian`
 
+Built with `React` and `Firebase`
+
 
